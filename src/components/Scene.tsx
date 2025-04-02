@@ -1,16 +1,10 @@
-import { useRef } from "react";
 import {
-  Mesh,
   RepeatWrapping,
   TextureLoader,
-  Shape,
-  Vector2,
-  ExtrudeGeometry,
   DoubleSide,
   EllipseCurve,
   BufferGeometry,
   Float32BufferAttribute,
-  Vector3,
 } from "three";
 import { useLoader } from "@react-three/fiber";
 
@@ -19,16 +13,15 @@ export default function Scene() {
   const radiusX = 45; // Half of 90 (width of the oval)
   const radiusZ = 30; // Half of 60 (height of the oval)
   const wallHeight = 15;
-  const wallThickness = 1; // Same thickness as character
 
   // Load and configure floor textures
   const [floorColor, floorNormal, floorRoughness, floorAo] = useLoader(
     TextureLoader,
     [
-      "/src/textures/floor/concrete_0031_color_2k.jpg",
-      "/src/textures/floor/concrete_0031_normal_opengl_2k.png",
-      "/src/textures/floor/concrete_0031_roughness_2k.jpg",
-      "/src/textures/floor/concrete_0031_ao_2k.jpg",
+      "/textures/floor/concrete_0031_color_2k.jpg",
+      "/textures/floor/concrete_0031_normal_opengl_2k.png",
+      "/textures/floor/concrete_0031_roughness_2k.jpg",
+      "/textures/floor/concrete_0031_ao_2k.jpg",
     ]
   );
 
@@ -36,10 +29,10 @@ export default function Scene() {
   const [wallColor, wallNormal, wallRoughness, wallAo] = useLoader(
     TextureLoader,
     [
-      "/src/textures/walls/Bricks094_2K-JPG_Color.jpg",
-      "/src/textures/walls/Bricks094_2K-JPG_NormalGL.jpg",
-      "/src/textures/walls/Bricks094_2K-JPG_Roughness.jpg",
-      "/src/textures/walls/Bricks094_2K-JPG_AmbientOcclusion.jpg",
+      "/textures/walls/Bricks094_2K-JPG_Color.jpg",
+      "/textures/walls/Bricks094_2K-JPG_NormalGL.jpg",
+      "/textures/walls/Bricks094_2K-JPG_Roughness.jpg",
+      "/textures/walls/Bricks094_2K-JPG_AmbientOcclusion.jpg",
     ]
   );
 
